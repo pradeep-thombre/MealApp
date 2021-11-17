@@ -1,0 +1,258 @@
+
+
+
+body{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#background{
+    margin-top: 0px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 70%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#background img{
+    width: 100%;
+    height: 150%;
+    filter: blur(2px);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body > h1 {
+    margin-top: 15%;
+    width: 100%;
+    text-align: center;
+    font-family: cursive;
+    color: white;
+    font-size: 80px;
+    font-weight: 900;
+}
+
+body > #searchBar{
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#searchBar input{
+    width: 30%;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#searchBar button{
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+#mainFlex{
+    position: absolute;
+    top: 70%;
+    display: flex;
+    width:100%;
+    justify-content: space-between;
+    background-image: linear-gradient(to bottom right,  rgb(25, 176, 187) 20%,rgba(112, 229, 250, 0) 60%,#04a7e7);
+}
+
+.sideLists{
+    border:  1px solid black;
+    width: 25%;
+    height: 70%;
+    margin: 1%;
+    border-radius: 10px;
+}
+.centerLists{
+    border:  1px solid black;
+    width: 45%;
+    height: 70%;
+    margin: 3%;
+    overflow: auto;
+    border-radius: 10px;
+}
+
+#mainFlex h4{
+    width: 100%;
+    text-align: center;
+    font-family: initial;
+    
+}
+
+#alpha{
+    padding: 5px 30px;
+}
+
+#alphaDiv{
+    margin: auto;
+    overflow: scroll;
+    align-items: center;
+    width: 470px;
+    padding-bottom: 15px;
+}
+
+#alphaDiv::-webkit-scrollbar {
+    display: none;
+}
+
+ol, ul {
+    padding-left: 0rem;
+}
+
+
+
+#alphaDiv li {
+    list-style: none;
+    height: 30px;
+    width: 30px;
+    margin-left: 5px;
+    display: inline-block;
+    border-radius: 15px;
+    color: black;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: thistle;
+    margin-top: 5px;
+    text-align: center;
+}
+
+#alphaDiv li:hover {
+    background-color: rgb(95, 182, 253);
+}
+
+#alpha-list{
+    margin: auto;
+    border-radius: 10px; 
+    max-height: 500px;
+    overflow: scroll;
+    
+}
+
+#alpha-list::-webkit-scrollbar {
+    display: none;
+}
+
+
+#alpha-items{
+    width: 98%;
+    margin: 10px;
+    height: 150px; 
+    border: 1px solid rgb(0, 0, 0); 
+    padding: 0%;
+    border-radius: 5px;
+    background-image: linear-gradient(to right,  rgb(55, 211, 231),rgba(255,0,0,0));
+}
+
+#alpha-items > div{
+    height: 148px; 
+    width: 200px; 
+    border-radius: 5px;
+    float: right;
+}
+
+#alpha-items  img{
+    height: 100%;
+    width: 200px;
+    background-repeat: no-repeat;
+    background-size:auto;
+    
+}
+
+
+#alpha-items h5{
+    font-family: ui-monospace;
+    height: 70px;
+    overflow: hidden;
+    width: 350px;
+    margin-left: 20px;
+    margin-top: 20px;
+    color: black;
+    font-weight: 500;
+}
+
+#alpha-items button{
+    height: 40px;
+    margin-left: 50px;
+    background-image: linear-gradient(to right,  rgb(250, 75, 98),rgba(255,0,0,0));
+    border-radius: 10px;
+}
+
+
+/* -----------------------fav------------------------- */
+
+
+#select-cat{
+    width: 45%;
+    margin: 5px 25%;
+    background-color: transparent;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+#cat{
+    padding: 5px 10px;
+}
+
+
+
+
+
+#cat-list{
+    margin: auto;
+    border-radius: 10px; 
+    max-height: 500px;
+    overflow: scroll;
+    
+}
+
+#cat-list::-webkit-scrollbar {
+    display: none;
+}
+
+
+#cat-items{
+    width: 98%;
+    margin: 10px;
+    height: 150px; 
+    border: 1px solid rgb(0, 0, 0); 
+    padding: 0%;
+    border-radius: 5px;
+    background-image: linear-gradient(to right,  rgb(55, 211, 231),rgba(255,0,0,0));
+}
+
+#cat-items > div{
+    height: 148px; 
+    width: 200px; 
+    border-radius: 5px;
+    float: right;
+}
+
+#cat-items  img{
+    height: 100%;
+    width: 200px;
+    background-repeat: no-repeat;
+    background-size:auto;
+    
+}
+
+
+#cat-items h5{
+    font-family: ui-monospace;
+    height: 70px;
+    overflow: hidden;
+    width: 350px;
+    margin-left: 20px;
+    margin-top: 20px;
+    color: black;
+    font-weight: 500;
+}
+
+#cat-items button{
+    height: 40px;
+    margin-left: 50px;
+    background-image: linear-gradient(to right,  rgb(250, 75, 98),rgba(255,0,0,0));
+    border-radius: 10px;
+}
