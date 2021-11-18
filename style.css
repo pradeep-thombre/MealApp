@@ -1,6 +1,4 @@
 
-
-
 body{
     margin:0;
     padding: 0;
@@ -35,6 +33,20 @@ body > h1 {
     font-weight: 900;
 }
 
+#title-fav{
+    float: right;
+    margin-right: 50px;
+    color: beige;
+    font-family: cursive;
+    font-size: 30px;
+}
+
+#title-fav:hover{
+    color: rgb(252, 11, 11);
+    text-decoration: underline;
+    /* background-image: linear-gradient(to right,rgb(255, 101, 101),rgb(94, 196, 255)); */
+}
+
 body > #searchBar{
     width: 100%;
     margin-top: 50px;
@@ -58,7 +70,8 @@ body > #searchBar{
     display: flex;
     width:100%;
     justify-content: space-between;
-    background-image: linear-gradient(to bottom right,  rgb(25, 176, 187) 20%,rgba(112, 229, 250, 0) 60%,#04a7e7);
+    background-color: rgb(128, 125, 128);
+    background-image: linear-gradient(to bottom right,rgba(112, 229, 250, 0) 10%,  rgb(106, 98, 185) 60%,rgba(112, 229, 250, 0) 80%,#04a7e7);
 }
 
 .sideLists{
@@ -84,6 +97,17 @@ body > #searchBar{
     
 }
 
+#mainFlex h2,#fav-list h2{
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    line-height: 100px;
+    font-family: cursive;
+    margin-top: 150px;
+}
+
+
+/* ------------------- english alphabates to fetch -----------  abcd------------------------ */
 #alpha{
     padding: 5px 30px;
 }
@@ -124,20 +148,27 @@ ol, ul {
     background-color: rgb(95, 182, 253);
 }
 
-#alpha-list{
+
+/* ----------------alpha fav cat divs styles--------------------- */
+
+#alpha-list,#fav-list,#cat-list{
     margin: auto;
     border-radius: 10px; 
-    max-height: 500px;
+    max-height: 540px;
     overflow: scroll;
     
 }
 
-#alpha-list::-webkit-scrollbar {
+#cat-list{
+    max-height: 600px;
+}
+
+#alpha-list::-webkit-scrollbar,#fav-list::-webkit-scrollbar,#cat-list::-webkit-scrollbar {
     display: none;
 }
 
 
-#alpha-items{
+#alpha-items,#fav-items,#cat-items{
     width: 98%;
     margin: 10px;
     height: 150px; 
@@ -147,14 +178,14 @@ ol, ul {
     background-image: linear-gradient(to right,  rgb(55, 211, 231),rgba(255,0,0,0));
 }
 
-#alpha-items > div{
+#alpha-items > div,#fav-items > div,#cat-items > div{
     height: 148px; 
     width: 200px; 
     border-radius: 5px;
     float: right;
 }
 
-#alpha-items  img{
+#alpha-items  img, #fav-items  img, #cat-items  img{
     height: 100%;
     width: 200px;
     background-repeat: no-repeat;
@@ -163,7 +194,7 @@ ol, ul {
 }
 
 
-#alpha-items h5{
+#alpha-items h5,#fav-items h5,#cat-items h5{
     font-family: ui-monospace;
     height: 70px;
     overflow: hidden;
@@ -174,7 +205,7 @@ ol, ul {
     font-weight: 500;
 }
 
-#alpha-items button{
+#alpha-items button, #fav-items button, #cat-items button{
     height: 40px;
     margin-left: 50px;
     background-image: linear-gradient(to right,  rgb(250, 75, 98),rgba(255,0,0,0));
@@ -197,62 +228,40 @@ ol, ul {
 }
 
 
+/* ------------------------fav ----------------------------- */
 
-
-
-#cat-list{
-    margin: auto;
-    border-radius: 10px; 
-    max-height: 500px;
-    overflow: scroll;
-    
-}
-
-#cat-list::-webkit-scrollbar {
-    display: none;
-}
-
-
-#cat-items{
-    width: 98%;
-    margin: 10px;
-    height: 150px; 
-    border: 1px solid rgb(0, 0, 0); 
-    padding: 0%;
-    border-radius: 5px;
-    background-image: linear-gradient(to right,  rgb(55, 211, 231),rgba(255,0,0,0));
-}
-
-#cat-items > div{
-    height: 148px; 
-    width: 200px; 
-    border-radius: 5px;
+#fav-div{
+    background-color: rgb(106, 98, 185);
+    background-image: linear-gradient( cyan ,rgba(255, 255, 255,0.5),rgba(3,45,107,0.7));
     float: right;
-}
-
-#cat-items  img{
-    height: 100%;
-    width: 200px;
-    background-repeat: no-repeat;
-    background-size:auto;
-    
-}
-
-
-#cat-items h5{
-    font-family: ui-monospace;
-    height: 70px;
+    height: 0%;
+    width: 0%;
+    position: fixed;
+    left: 100%;
+    top: 0%;
+    border: 1px solid black;
     overflow: hidden;
-    width: 350px;
-    margin-left: 20px;
-    margin-top: 20px;
-    color: black;
-    font-weight: 500;
+    transition: all 0.1s ease-in-out;
+    padding: 15px;
 }
 
-#cat-items button{
-    height: 40px;
-    margin-left: 50px;
-    background-image: linear-gradient(to right,  rgb(250, 75, 98),rgba(255,0,0,0));
-    border-radius: 10px;
+#fav-div:target{
+    width: 40%;
+    min-height: 100%;
+    left: 60%;
+}
+
+#fav-div h1{
+    /* color: ; */
+    width: 100%;
+    text-align: center;
+    font-family: cursive;
+}
+
+#fav-div i{
+    position: absolute;
+    top: 15px;
+    font-size: 30px;
+    left: 90%;
+    color: red;
 }
