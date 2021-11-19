@@ -5,6 +5,8 @@ body{
     box-sizing: border-box;
 }
 
+
+/* backrgroun div and  image */
 #background{
     margin-top: 0px;
     position: absolute;
@@ -22,6 +24,8 @@ body{
     background-size: cover;
 }
 
+
+/* main heading */
 body > h1 {
     margin-top: 15%;
     width: 100%;
@@ -38,20 +42,26 @@ body > h1 {
     color: beige;
     font-family: cursive;
     font-size: 25px;
-}
 
+}
+a{
+    text-decoration: none;
+}
 #title-fav:hover{
     color: rgb(252, 11, 11);
     text-decoration: underline;
     /* background-image: linear-gradient(to right,rgb(255, 101, 101),rgb(94, 196, 255)); */
 }
 
+
+/* search bae  */
 body > #searchBar{
     width: 100%;
     margin-top: 50px;
     text-align: center;
 }
 
+/* imput  */
 #searchBar input{
     width: 30%;
     min-width: 170px;
@@ -64,6 +74,8 @@ body > #searchBar{
     border-radius: 5px;
 }
 
+
+/* searhc bar rsults  */
 #searchBar ul{
     list-style: none;
     position: absolute;
@@ -117,10 +129,7 @@ body > #searchBar{
 
 
 
-
-
-
-
+/* main flex to store category and alpha div  */
 #mainFlex{
     position: absolute;
     top: 70%;
@@ -132,6 +141,8 @@ body > #searchBar{
     background-image: linear-gradient(to bottom right,rgba(112, 229, 250, 0) 10%,  rgb(106, 98, 185) 60%,rgba(112, 229, 250, 0) 80%,#04a7e7);
 }
 
+
+/* centre list  */
 .centerLists{
     border:  1px solid black;
     width: 45%;
@@ -180,7 +191,7 @@ ol, ul {
 }
 
 
-
+/* alpha div item  */
 #alphaDiv li {
     list-style: none;
     height: 30px;
@@ -214,11 +225,12 @@ ol, ul {
     max-height: 600px;
 }
 
+/* removing scroll bars */
 #alpha-list::-webkit-scrollbar,#fav-list::-webkit-scrollbar,#cat-list::-webkit-scrollbar {
     display: none;
 }
 
-
+/* iems size  */
 #alpha-items,#fav-items,#cat-items{
     width: 98%;
     margin: 10px;
@@ -229,6 +241,8 @@ ol, ul {
     background-image: linear-gradient(to right,  rgb(55, 211, 231),rgba(255,0,0,0));
 }
 
+
+/* divs of item  image */
 #alpha-items > div,#fav-items > div,#cat-items > div{
     height: 148px; 
     width: 200px; 
@@ -239,6 +253,7 @@ ol, ul {
     text-decoration: none;
 }
 
+/* image meal  */
 #alpha-items  img, #fav-items  img, #cat-items  img{
     height: 100%;
     width: 100%;
@@ -247,7 +262,7 @@ ol, ul {
     
 }
 
-
+/* name meal/ */
 #alpha-items h5,#fav-items h5,#cat-items h5{
     font-family: ui-monospace;
     height: 70px;
@@ -327,11 +342,14 @@ a i{
     padding: 3px;
 }
 
+
+/* screen size less then 1300  */
 @media only screen and (max-width:1300px){
     #mainFlex{
         flex-wrap:wrap;
     }
 
+    /* reducing size  */
     .centerLists {
         width: 700px;
     }
@@ -345,6 +363,8 @@ a i{
         font-size: 30px;
     }
 }
+
+/* screen size less then 980  */
 @media only screen and (max-width:980px){
     #fav-div:target{
         width: 80%;
@@ -354,12 +374,30 @@ a i{
         font-size: 60px;
         font-weight: 700;
     }
+    /* decresing size of backforund */
+    #background{
+        height: 50%;
+    }
+
+    #mainFlex{
+        top: 50%;
+    }
+    #title-fav {
+        font-size: 20px;
+    }
+    
+    #fav-div i {
+        font-size: 25px;
+    }
+    
 }
 
 @media only screen and (max-width:760px){
     .centerLists {
         width: 400px;
     }
+
+    /* radjusting sizes of elements of list items  */
 
     #alpha-items,#fav-items,#cat-items{
         height: 100px; 
@@ -399,7 +437,7 @@ a i{
         font-weight: 500;
     }
 
-    
+    /* search bar size reduced  */
     #searchBar input{
         width: 40%;
     }
@@ -433,10 +471,30 @@ a i{
         height: 0%;
         width: 0%;
     }
+    #title-fav {
+        margin-right: 20px;
+    }
+    #mainFlex h4 {
+        font-size: 17px;
+    }
 
+    #alphaDiv {
+        width: 370px;
+        padding-bottom:10px;
+    }
+
+    #fav-div i {
+        font-size: 20px;
+    }
 }
 
+
+/* screen size lessss then 530  */
 @media only screen and (max-width:530px){
+
+    #select-cat {
+        font-size: 12px;
+    }
     #fav-div:target{
         width: 100%;
         left: 0%;
@@ -446,6 +504,29 @@ a i{
         font-size: 20px;
     }
 
+    #background{
+        height: 42%;
+    }
+
+    #mainFlex{
+        top: 42%;
+    }
+    #title-fav {
+        margin-right: 10px;
+        font-size: 15px;
+    }
+    #fav-div i {
+        font-size: 15px;
+    }
+    #alphaDiv li{
+        margin-left: 2px;
+        height: 18px;
+        width: 18px;
+        font-size: 10px;
+    }
+    body > h1 {
+        font-size: 38px;
+    }
     
 }
 
@@ -495,5 +576,58 @@ a i{
     #searchBar ul li p{
         height: 0px;
         width: 0px;
+    }
+    #title-fav {
+        margin-top: 20%;
+        margin-right: 10px;
+        font-size: 12px;
+    }
+
+    
+    #alpha-items > div,#fav-items > div,#cat-items > div{
+        height: 98px; 
+        width: 100px; 
+    }
+
+    #alpha-items  img, #fav-items  img, #cat-items  img{
+        width: 100px;
+        
+    }
+
+    
+    
+    #alpha-items h5,#fav-items h5,#cat-items h5{
+        height: 50px;
+        width: 140px;
+        font-size: 12px;
+    }
+    
+    #alpha-items button, #fav-items button, #cat-items button{
+        height: 30px;
+        margin-left: 20px;
+        background-image: linear-gradient(to right,  rgb(250, 75, 98),rgba(255,0,0,0));
+        border-radius: 10px;
+        font-size: 12px;
+        padding: 0px 5px;
+    }
+
+    #alphaDiv {
+        width: 100%;
+        padding-bottom:10px;
+    }
+
+    
+
+    
+
+    
+}
+
+@media only screen and (max-width:320px){
+    #mainFlex{
+        top: 38%;
+    }
+    #background{
+        height: 38%;
     }
 }

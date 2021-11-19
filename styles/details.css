@@ -1,0 +1,71 @@
+/* ----------------body styles----------------------- */
+body{
+    box-sizing: border-box;
+    text-align: center;
+    background-color: rgb(128, 125, 128);
+    background-image: linear-gradient(to bottom right,rgba(112, 229, 250, 0) 10%,  rgb(106, 98, 185) 60%,rgba(112, 229, 250, 0) 80%,#04a7e7);
+}
+
+
+/* main div styles */
+#main{
+    height: 95%;  
+    text-align: center; 
+}
+h2{
+    font-size: 40px;
+    
+}
+img{
+    border-radius: 20px;
+    border: 1px solid black;
+    height: 300px;
+    width: 300px;
+}
+
+a{
+    font-size: 20px;
+}
+
+
+
+
+
+/* screen size less then 700px */
+
+@media only screen and (max-width:700px){
+
+    h2{
+        font-size: 25px;
+        
+    }
+    img{
+        border-radius: 20px;
+        border: 1px solid black;
+        height: 200px;
+        width: 200px;
+    }
+}
+
+
+
+
+/* screen size less then 400px */
+@media only screen and (max-width:400px){
+
+    h2{
+        font-size: 17px;
+        
+    }
+    img{
+        border-radius: 20px;
+        height: 120px;
+        width: 120px;
+    }
+    a{
+        font-size: 15px;
+    }
+    p{
+        font-size: 12px;
+    }
+}

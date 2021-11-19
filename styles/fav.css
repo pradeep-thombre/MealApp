@@ -1,0 +1,231 @@
+body{
+    background-color: aquamarine;
+
+}
+
+
+
+/* fav list styles */
+#fav-list{
+    border-radius: 10px; 
+    overflow: scroll;
+    max-height: 65vh;
+    overflow: scroll;
+}
+/* removing scroll bar  */
+#fav-list::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* items styel/  */
+#fav-items{
+    width: 98%;
+    margin: 10px;
+    height: 150px; 
+    border: 1px solid rgb(0, 0, 0); 
+    padding: 0%;
+    border-radius: 5px;
+    background-image: linear-gradient(to right,  rgb(55, 211, 231),rgba(255,0,0,0));
+}
+
+
+
+/* elements in fav div  */
+#fav-items > div{
+    height: 148px; 
+    width: 200px; 
+    border-radius: 5px;
+    float: right;
+}
+#fav-items > a{
+    text-decoration: none;
+}
+
+
+/* meal imag  */
+#fav-items  img{
+    height: 100%;
+    width: 200px;
+    background-repeat: no-repeat;
+    background-size:auto;
+    
+}
+
+/* heading- name of meal  */
+#fav-items h5{
+    font-family: ui-monospace;
+    height: 60px;
+    overflow: hidden;
+    width: 350px;
+    margin-left: 20px;
+    margin-top: 10px;
+    color: black;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+
+/* add fav button  */
+#fav-items button {
+    height: 40px;
+    margin-left: 50px;
+    background-image: linear-gradient(to right,  rgb(250, 75, 98),rgba(255,0,0,0));
+    border-radius: 10px;
+}
+
+
+/* ------------------------fav ----------------------------- */
+
+#fav-div{
+    background-color: rgb(106, 98, 185);
+    background-image: linear-gradient( cyan ,rgba(255, 255, 255,0.5),rgba(3,45,107,0.7));
+    border: 1px solid black;
+    overflow: hidden;
+    transition: all 0.1s ease-in-out;
+    padding: 15px;
+    
+}
+
+
+/* list style  */
+.centerLists{
+    border:  1px solid black;
+    width: 70%;
+    height: 80%;
+    margin: auto;
+}
+
+#fav-div h1{
+    /* color: ; */
+    width: 100%;
+    text-align: center;
+    font-family: cursive;
+}
+
+
+/* home anchors style */
+a img{
+    margin: 25px 0 0 25px;
+    height: 60px;
+    width: 60px;
+    border: 1px solid black;
+}
+
+
+/* styles for size less then 800px  */
+
+@media only screen and (max-width:800px){
+    .centerLists {
+        width: 450px;
+    }
+
+
+
+
+    /* reducing list size and font size image size  */
+    #alpha-items,#fav-items,#cat-items{
+        height: 100px; 
+    }
+
+    #alpha-items > div,#fav-items > div,#cat-items > div{
+        height: 98px; 
+        width: 150px; 
+    }
+
+
+    #alpha-items  img, #fav-items  img, #cat-items  img{
+        width: 200px;
+        
+    }
+
+
+    /* heading size  */
+    #alpha-items h5,#fav-items h5,#cat-items h5{
+        height: 60px;
+        width: 200px;
+        font-size: 15px;
+        margin: 3px 0px 0px 3px;
+        font-weight: 300;
+    }
+
+    /* button size  */
+    #alpha-items button, #fav-items button, #cat-items button{
+        height: 30px;
+        margin-left: 20px;
+        background-image: linear-gradient(to right,  rgb(250, 75, 98),rgba(255,0,0,0));
+        border-radius: 10px;
+        font-size: 12px;
+        padding: 2px 5px;
+    }
+    a img{
+        height: 40px;
+        width: 40px;
+    }
+}
+
+
+/* styles for size less then 500px */
+
+@media only screen and (max-width:500px){
+    .centerLists {
+        width: 350px;
+    }
+
+
+    /* list div styles  */
+    #alpha-items > div,#fav-items > div,#cat-items > div{
+        width: 100px; 
+    }
+
+
+    /* list image items  */
+    #alpha-items  img, #fav-items  img, #cat-items  img{
+        width: 100px;
+        
+    }
+
+}
+
+
+
+/* styles for size less then 380px */
+@media only screen and (max-width:380px){
+    .centerLists {
+        width: 250px;
+    }
+
+
+    /* list styles  */
+
+    #alpha-items > div,#fav-items > div,#cat-items > div{
+        width: 100px; 
+    }
+
+
+    #alpha-items  img, #fav-items  img, #cat-items  img{
+        width: 100px;
+    }
+
+
+    /* heading styles  */
+    #alpha-items h5,#fav-items h5,#cat-items h5{
+        height: 50px;
+        width: 130px;
+        font-size: 12px;
+    }
+
+    /* button styles  */
+    #alpha-items button, #fav-items button, #cat-items button{
+        height: 30px;
+        margin-left: 5px;
+        font-size: 10px;
+        padding: 2px 5px;
+    }
+
+    home anchor size reduce
+    a img{
+        height: 25px;
+        width: 25px;
+    }
+}
