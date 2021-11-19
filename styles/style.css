@@ -309,6 +309,7 @@ ol, ul {
     overflow: hidden;
     transition: all 0.1s ease-in-out;
     padding: 15px;
+    z-index: 4;
 }
 
 #fav-div:target{
