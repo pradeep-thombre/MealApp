@@ -173,6 +173,7 @@ a img{
     }
 
 
+
     /* list div styles  */
     #alpha-items > div,#fav-items > div,#cat-items > div{
         width: 100px; 
@@ -183,6 +184,20 @@ a img{
     #alpha-items  img, #fav-items  img, #cat-items  img{
         width: 100px;
         
+    }
+
+        
+    /* fav list styles */
+    #fav-div{
+        padding: 5px;
+    }
+
+
+    /* items styel/  */
+    #fav-items{
+        margin: 0px;
+        padding: 0%;
+        border-radius: 5px;
     }
 
 }
