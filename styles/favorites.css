@@ -223,7 +223,7 @@ a img{
         padding: 2px 5px;
     }
 
-    home anchor size reduce
+    /* home anchor size reduce */
     a img{
         height: 25px;
         width: 25px;

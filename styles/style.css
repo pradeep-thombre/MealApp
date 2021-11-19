@@ -48,7 +48,7 @@ a{
     text-decoration: none;
 }
 #title-fav:hover{
-    color: rgb(252, 11, 11);
+    color: rgb(0, 0, 0);
     text-decoration: underline;
     /* background-image: linear-gradient(to right,rgb(255, 101, 101),rgb(94, 196, 255)); */
 }
