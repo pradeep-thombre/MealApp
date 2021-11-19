@@ -2,6 +2,18 @@ let alphabet;
 let httpReq = new XMLHttpRequest();
 var itemSet=new Set();
 
+try{
+    let list=localStorage.getItem("list").split("-");
+    for(let id of list){
+        if(id!=""){
+            itemSet.add(id);
+        }
+    }
+}catch(err){
+    localStorage.setItem("list", "");
+}
+
+
 for(i=9,alphabet='';++i<36;){
     let char=i.toString(36);
     node=document.createElement("li");
@@ -40,15 +52,22 @@ function getData(alphabet){
             div.appendChild(img);
 
             title=document.createElement("h5");
+            a=document.createElement("a");
+            title.id=meal.idMeal;
             title.innerHTML = meal.strMeal;
+            
+            a.setAttribute("href", "details.html");
+            a.appendChild(title);
+            title.setAttribute("onclick", "detailsClicked(this.id)");
+
 
             button=document.createElement("button");
             button.innerHTML = "Add to Favorite";
-            button.id= meal.strMeal;
+            button.id= meal.idMeal;
             button.setAttribute("onclick", "fav_click(this.id)" );
 
             parent.appendChild(div);
-            parent.appendChild(title);
+            parent.appendChild(a);
             parent.appendChild(button);
             
             document.getElementById("alpha-list").appendChild(parent);
@@ -80,15 +99,21 @@ function getCatData(alphabet){
             div.appendChild(img);
 
             title=document.createElement("h5");
+            a=document.createElement("a");
+            title.id=meal.idMeal;
             title.innerHTML = meal.strMeal;
-
+            
+            a.setAttribute("href", "details.html");
+            a.appendChild(title);
+            title.setAttribute("onclick", "detailsClicked(this.id)");
             button=document.createElement("button");
             button.innerHTML = "Add to Favorite";
-            button.id= meal.strMeal;
+            button.id= meal.idMeal;
+            
             button.setAttribute("onclick", "fav_click(this.id)" );
 
             parent.appendChild(div);
-            parent.appendChild(title);
+            parent.appendChild(a);
             parent.appendChild(button);
             
             document.getElementById("cat-list").appendChild(parent);
@@ -118,15 +143,21 @@ function getFavData(alphabet){
             div.appendChild(img);
 
             title=document.createElement("h5");
+            a=document.createElement("a");
+            title.id=meal.idMeal;
             title.innerHTML = meal.strMeal;
+            
+            a.setAttribute("href", "details.html");
+            a.appendChild(title);
+            title.setAttribute("onclick", "detailsClicked(this.id)");
 
             button=document.createElement("button");
             button.innerHTML = "Remove from Favorite";
-            button.id= meal.strMeal;
+            button.id= meal.idMeal;
             button.setAttribute("onclick", "favDel(this.id)" );
 
             parent.appendChild(div);
-            parent.appendChild(title);
+            parent.appendChild(a);
             parent.appendChild(button);
             
             document.getElementById("fav-list").appendChild(parent);
@@ -159,24 +190,31 @@ function cat_click(char){
 }
 
 function fav_click(name){
+
+
     if(itemSet.size==0){
         const myNode = document.getElementById("fav-list");
         myNode.removeChild(myNode.lastChild);
     }
     if(!itemSet.has(name)){
         itemSet.add(name);
-        alphabet ="https://www.themealdb.com/api/json/v1/1/search.php?s="+ name;
+        localStorage.setItem("list",localStorage.getItem("list")+name+"-" );
+        alphabet ="https://www.themealdb.com/api/json/v1/1/lookup.php?i="+ name;
         getFavData(alphabet);
     }
+    
 }
 
 function favDel(name){
     if(itemSet.has(name)){
         itemSet.delete(name);
+        let list="";
+        for(let id of itemSet){
+            list+=id+"-";
+        }
+        localStorage.setItem("list",list);
     }
     loadAll();
-
-    
 }
 
 
@@ -189,7 +227,7 @@ function loadAll(){
     
 
     for(var name of itemSet){
-        alphabet ="https://www.themealdb.com/api/json/v1/1/search.php?s="+ name;
+        alphabet ="https://www.themealdb.com/api/json/v1/1/lookup.php?i="+ name;
         getFavData(alphabet);
     }
     if(itemSet.size==0){
@@ -199,6 +237,63 @@ function loadAll(){
     }
 
 }
+
 loadAll();
 getCatData("https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood");
 getData("https://www.themealdb.com/api/json/v1/1/search.php?f=s");
+
+var searchSet=new Set();
+// searching data and reloading data
+
+function keyupHandle() {
+    const myNode = document.getElementById("search-result");
+        while (myNode.firstChild) {
+            myNode.removeChild(myNode.lastChild);
+        }
+    searchText=document.getElementById("searchtext").value;
+    
+    if(searchText.length!=0){
+        if(searchText.length==1){
+            loadSearchedData("https://www.themealdb.com/api/json/v1/1/search.php?f="+searchText);
+        }else{
+            loadSearchedData("https://www.themealdb.com/api/json/v1/1/search.php?s="+searchText);
+        }
+        
+    }
+
+    
+    
+        
+}
+
+function loadSearchedData(alphabet){
+    
+    httpReq.open("get", alphabet, true);
+    searchSet=new Set(); 
+    console.log(alphabet);
+    httpReq.onload = function() {
+        data = JSON.parse(httpReq.response);
+        for(let meal of data.meals){
+            searchSet.add(meal.strMeal);
+            li=document.createElement("li");
+            a1=document.createElement("a");
+            a1.innerHTML = meal.strMeal;
+            a1.id=meal.idMeal;
+            a1.setAttribute("onclick", "detailsClicked(this.id)");
+            a1.setAttribute("href", "details.html");
+            a1.setAttribute("target", "_blank");
+            p=document.createElement("p");
+            p.id=meal.strMeal;
+            p.innerHTML = "Add to Favourites";
+            p.setAttribute("onclick", "fav_click(this.id)");
+            li.appendChild(a1);
+            li.appendChild(p)
+            document.getElementById("search-result").appendChild(li);
+        }
+    }
+    httpReq.send();
+}
+
+function detailsClicked(id){
+    localStorage.setItem("id", id);
+}

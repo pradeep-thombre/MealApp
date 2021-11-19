@@ -12,12 +12,11 @@ body{
     width: 100%;
     height: 70%;
     z-index: -1;
-    overflow: hidden;
 }
 
 #background img{
     width: 100%;
-    height: 150%;
+    height: 100%;
     filter: blur(2px);
     background-repeat: no-repeat;
     background-size: cover;
@@ -38,7 +37,7 @@ body > h1 {
     margin-right: 50px;
     color: beige;
     font-family: cursive;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 #title-fav:hover{
@@ -55,6 +54,7 @@ body > #searchBar{
 
 #searchBar input{
     width: 30%;
+    min-width: 170px;
     padding: 5px;
     border-radius: 5px;
 }
@@ -64,23 +64,74 @@ body > #searchBar{
     border-radius: 5px;
 }
 
+#searchBar ul{
+    list-style: none;
+    position: absolute;
+    text-align: start;
+    z-index: 3;
+    left: 32%;
+    width: 30%;
+    overflow: visible;
+    background-color: rgb(255, 255, 255);
+    border: black solid 1px;
+}
+
+#searchBar ul li{
+    padding: 0px 10px;
+    color: black;
+    width: 100%;
+    min-width: 170px;
+    border: black solid 1px;
+
+}
+
+
+#searchBar ul li:hover{
+    background-color: rgb(179, 179, 179);
+}
+
+#searchBar ul li a{
+    overflow: hidden;
+    height: 30px;
+    width: 50%;
+    padding: 0%;
+    margin: 0%;
+    display: inline-block;
+    text-decoration: none;
+}
+#searchBar ul li p{
+    margin-right: 10px;
+    color: rgb(255, 0, 0);
+    float: right;
+    padding: 0%;
+    margin: 0%;
+    font-size: 15px;
+}
+
+#redirect{
+    float: right;
+}
+
+
+
+
+
+
+
+
+
+
 #mainFlex{
     position: absolute;
     top: 70%;
     display: flex;
+    flex-flow:nowrap;
     width:100%;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: rgb(128, 125, 128);
     background-image: linear-gradient(to bottom right,rgba(112, 229, 250, 0) 10%,  rgb(106, 98, 185) 60%,rgba(112, 229, 250, 0) 80%,#04a7e7);
 }
 
-.sideLists{
-    border:  1px solid black;
-    width: 25%;
-    height: 70%;
-    margin: 1%;
-    border-radius: 10px;
-}
 .centerLists{
     border:  1px solid black;
     width: 45%;
@@ -109,7 +160,7 @@ body > #searchBar{
 
 /* ------------------- english alphabates to fetch -----------  abcd------------------------ */
 #alpha{
-    padding: 5px 30px;
+    padding: 5px;
 }
 
 #alphaDiv{
@@ -137,9 +188,9 @@ ol, ul {
     margin-left: 5px;
     display: inline-block;
     border-radius: 15px;
-    color: black;
-    border: 1px solid rgb(0, 0, 0);
-    background-color: thistle;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgb(206, 99, 12);
     margin-top: 5px;
     text-align: center;
 }
@@ -184,12 +235,15 @@ ol, ul {
     border-radius: 5px;
     float: right;
 }
+#alpha-items > a,#fav-items > a,#cat-items > a{
+    text-decoration: none;
+}
 
 #alpha-items  img, #fav-items  img, #cat-items  img{
     height: 100%;
-    width: 200px;
+    width: 100%;
     background-repeat: no-repeat;
-    background-size:auto;
+    background-size:cover;
     
 }
 
@@ -221,10 +275,7 @@ ol, ul {
     margin: 5px 25%;
     background-color: transparent;
     border: 1px solid rgb(255, 255, 255);
-}
-
-#cat{
-    padding: 5px 10px;
+    padding: 5px;
 }
 
 
@@ -264,4 +315,185 @@ ol, ul {
     font-size: 30px;
     left: 90%;
     color: red;
+}
+a i{
+    position: absolute; 
+    top: 10%; 
+    left: 92%; 
+    font-size: 40px; 
+    background-color: rgb(224, 221, 221); 
+    border-radius: 3px; 
+    border: 1px solid black; 
+    padding: 3px;
+}
+
+@media only screen and (max-width:1300px){
+    #mainFlex{
+        flex-wrap:wrap;
+    }
+
+    .centerLists {
+        width: 700px;
+    }
+
+    #fav-div:target{
+        width: 60%;
+        left: 40%;
+    }
+    a i{
+        
+        font-size: 30px;
+    }
+}
+@media only screen and (max-width:980px){
+    #fav-div:target{
+        width: 80%;
+        left: 20%;
+    }
+    body > h1 {
+        font-size: 60px;
+        font-weight: 700;
+    }
+}
+
+@media only screen and (max-width:760px){
+    .centerLists {
+        width: 400px;
+    }
+
+    #alpha-items,#fav-items,#cat-items{
+        height: 100px; 
+    }
+    
+    #alpha-items > div,#fav-items > div,#cat-items > div{
+        height: 98px; 
+        width: 150px; 
+    }
+    
+    
+    #alpha-items  img, #fav-items  img, #cat-items  img{
+        width: 200px;
+        
+    }
+    
+    
+    #alpha-items h5,#fav-items h5,#cat-items h5{
+        height: 60px;
+        width: 200px;
+        font-size: 15px;
+        margin: 3px 0px 0px 3px;
+        font-weight: 300;
+    }
+    
+    #alpha-items button, #fav-items button, #cat-items button{
+        height: 30px;
+        margin-left: 20px;
+        background-image: linear-gradient(to right,  rgb(250, 75, 98),rgba(255,0,0,0));
+        border-radius: 10px;
+        font-size: 12px;
+        padding: 2px 5px;
+    }
+
+    body > h1 {
+        margin-top: 20%;
+        font-weight: 500;
+    }
+
+    
+    #searchBar input{
+        width: 40%;
+    }
+
+    #searchBar button{
+        padding: 5px 10px;
+        font-size: 15px;
+        border-radius: 5px;
+    }
+
+    #searchBar ul{
+        left: 25%;
+        width: 40%;
+    }
+
+    #searchBar ul li{
+        padding: 0px 10px;
+        color: black;
+        min-width: 120px;
+        height: 40px;
+    }
+
+
+    #searchBar ul li a{
+        font-size: 12px;
+        width: 100%;
+    }
+
+    #searchBar ul li p{
+        visibility: hidden;
+        height: 0%;
+        width: 0%;
+    }
+
+}
+
+@media only screen and (max-width:530px){
+    #fav-div:target{
+        width: 100%;
+        left: 0%;
+    }
+    a i {
+        
+        font-size: 20px;
+    }
+
+    
+}
+
+@media only screen and (max-width:400px){
+    #fav-div:target{
+        width: 100%;
+        left: 0%;
+    }
+    body > h1 {
+        margin-top: 20%;
+        font-weight: 300;
+        font-size: 35px;
+    }
+
+        
+    #searchBar input{
+        font-size: 12px;
+        padding: 2px;
+        border-radius: 5px;
+    }
+
+    #searchBar button{
+        padding: 2px 10px;
+        font-size: 12px;
+    }
+
+    #searchBar ul{
+        left: 18%;
+        width: 45%;
+        overflow: hidden;
+    }
+
+    #searchBar ul li{
+        padding: 0px 5px;
+        min-width: 170px;
+        padding: 2px;
+    }
+
+
+
+    #searchBar ul li a{
+        overflow: hidden;
+        height: 20px;
+        font-size: 12px;
+        width: 100%;
+    }
+    #searchBar ul li p{
+        height: 0px;
+        width: 0px;
+    }
 }

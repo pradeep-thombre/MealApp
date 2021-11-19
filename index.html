@@ -13,21 +13,22 @@
     <div id="background">
         <img src="/receipetable.jpg" alt="">
     </div>
+    <a href="#fav-div"><i ; width: 95%;" class="fas fa-bars "></i></a>
     <h1>Easy Meals</h1>
     <div id="searchBar">
-        <input type="text" id="">
+        <input onkeyup="keyupHandle()" type="text" id="searchtext" placeholder="Enter Name here to search meal">
         <button type="button">Search</button>
+        <ul id="search-result">
+        </ul>
     </div>
-    <a href="#fav-div" id="title-fav" ><i class="far fa-heart"></i>Favourites</a>
-
+    <a href="/fav.html" id="title-fav">Favourites</a>
     <div id="mainFlex">
         <div id="category" class="centerLists">
             <h4>Select by Category</h4>
             <select onchange="cat_click(this.value)" id="select-cat"></select>
             <div  id="cat-list">                
             </div>
-                     
-
+                    
         </div>
 
         <div id="alpha" class="centerLists">
@@ -35,7 +36,6 @@
             <ul id="alphaDiv"></ul>
             <div id="alpha-list">                
             </div>
-            
 
         </div>
 
@@ -46,7 +46,6 @@
         <a href="#"><i class="fas fa-times-circle"></i></a>
         <div id="fav-list">                
         </div>
-        <!-- <h1>Oops!!! You haven't added any Meals to Favourites</h1> -->
     </div>
 
     <script src="script.js"></script>
