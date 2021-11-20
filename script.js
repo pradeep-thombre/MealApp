@@ -322,7 +322,7 @@ function loadSearchedData(alphabet){
             a1.setAttribute("href", "details.html");
             a1.setAttribute("target", "_blank");
             p=document.createElement("p");
-            p.id=meal.strMeal;
+            p.id=meal.idMeal;
             p.innerHTML = "Add to Favourites";
             p.setAttribute("onclick", "fav_click(this.id)");
             li.appendChild(a1);
