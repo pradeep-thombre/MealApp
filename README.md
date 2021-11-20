@@ -39,11 +39,11 @@ Open index.html in live server or chrome
 
 ## Screenshots
 
-![App Screenshot](https://drive.google.com/file/d/1f3wzvtN5XgEfJtOwV3b_QiHXb4CMH2-G/view?usp=sharing)
+![App Screenshot](https://i.ibb.co/vv51PwS/Screenshot-2021-11-20-160811.png)
 
-![App Screenshot](https://drive.google.com/file/d/19QEdsTNPvQin9OSE3FZUVtZgFN484TA5/view?usp=sharing)
+![App Screenshot](https://i.ibb.co/617rpqG/Screenshot-2021-11-20-160954.png)
 
-![App Screenshot](https://drive.google.com/file/d/1_ER9sa2l-2gzQd9IzwKou9bU3iqbNVT-/view?usp=sharing)
+![App Screenshot](https://i.ibb.co/5jQS965/Screenshot-2021-11-20-161104.png)
 ## Authors
 
 - [@pradeepthombre](https://github.com/pradeep-thombre)
